@@ -1,4 +1,5 @@
 ﻿using System;
+using Exiled.Events.EventArgs;
 
 namespace CustomNickname
 {
@@ -10,6 +11,14 @@ namespace CustomNickname
         public void Dispose()
         {
             _pluginInstance = null;
+        }
+
+        public void OnJoined(JoinedEventArgs ev)
+        {
+            if (_pluginInstance.Config.CustomDictionary.ContainsKey(ev.Player.UserId))
+            {
+                ev.Player.DisplayNickname = _pluginInstance.Config.CustomDictionary[ev.Player.UserId];
+            }
         }
     }
 }
