@@ -11,7 +11,7 @@ namespace CustomNickname
         [Description("커스텀 닉네임 설정")]
         public Dictionary<string, string> CustomDictionary { get; private set; } = new Dictionary<string, string>
         {
-            
+            {"123412341234@steam", "Unknown"}
         };
     }
 }
